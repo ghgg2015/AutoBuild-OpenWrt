@@ -15,8 +15,8 @@ on:
     branches: 
       - master
 
-  schedule:
-    - cron: 0 8 * * 5
+  #schedule:
+  #  - cron: 0 8 * * 5
   
   #watch:
   #  types: [started]
@@ -72,7 +72,10 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-
+        
+    - name: SSH connection to Actions
+      uses: p3terx/debugger-action@master
+      
     - name: Import external feeds
       working-directory: ./openwrt
       run: |
