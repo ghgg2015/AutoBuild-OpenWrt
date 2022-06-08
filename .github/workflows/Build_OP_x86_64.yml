@@ -74,7 +74,7 @@ jobs:
         ./scripts/feeds install -a
         
     - name: SSH connection to Actions
-      uses: p3terx/debugger-action@master
+      uses: csexton/debugger-action@master
       
     - name: Import external feeds
       working-directory: ./openwrt
